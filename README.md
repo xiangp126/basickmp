@@ -8,8 +8,6 @@
 
 ![next2](http://img1.tuicool.com/qYN3u2v.png!web)
 
-## Optimized KMP 
-
 ## Usage
 
 ```bash    
