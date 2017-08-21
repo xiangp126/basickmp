@@ -1,18 +1,22 @@
 
 CC = g++
 CFLAGXX = -Wall -g3 -std=c++11
-OBJS = main.o
+OBJS = kmp.o demo.o
+INC = .
 
-all : main
+all : demo
 
-main.o: kmp.cpp
-	${CC} ${CFLAGXX} -c $< -o main.o
+kmp.o: kmp.cpp kmp.h
+	${CC} ${CFLAGXX} -c $< -o kmp.o
 
-main: ${OBJS}
-	${CC} ${OBJS} -o main 
+demo.o: demo.cpp kmp.h demo.h
+	${CC} ${CFLAGXX} -c $< -o demo.o
+
+demo: ${OBJS}
+	${CC} ${OBJS} -o demo
 
 .PYONY: clean
 clean:
 	@echo "Removing binary and objects..."
-	-rm -rf *.o main core
+	-rm -rf *.o demo core
 

@@ -1,19 +1,11 @@
-/* refer to http://www.tuicool.com/articles/yayeIbe */
 #include <iostream>
-#include <stdio.h>
-#include <string.h>
+#include "kmp.h"
+#include "demo.h"
 
 #define GETNEXT
 #define GETNEXTOPTIMIZED
 
 using namespace std;
-void printArray(int *, int);
-void printIndex(const char *);
-void outputStr(const char *);
-void printMaster(char, int);
-void getNext(const char *, int *);
-void getNextOptimized(const char *, int *);
-int subSearch(const char *, const char *, int *);
 
 int main(int argc, const char *argv[]) {
     const char *str = "BBCABCDABABCDABCDABDET";
@@ -86,53 +78,3 @@ inline void outputStr(const char *str) {
     cout << endl;
 }
 
-void getNext(const char *str, int *next) {
-    const int len = strlen(str);
-    int j = 0, k = -1;
-    next[0] = -1;
-    while (j < len - 1) {
-        if (-1 == k || str[j] == str[k]) {
-            next[++j] = ++k;
-        } else {
-            k = next[k];
-        }
-    }
-
-    return;
-}
-
-int subSearch(const char *str, const char *pattern, int *next) {
-    int lenStr = strlen(str);
-    int lenPat = strlen(pattern);
-    int i = 0, j = 0;
-    while (i < lenStr && j < lenPat) {
-        if (-1 == j || str[i] == pattern[j]) {
-            ++i;
-            ++j;
-        } else {
-            j = next[j];
-        }
-    }
-    if (j == lenPat) {
-        return i - j;
-    }
-    return -1;
-}
-
-void getNextOptimized(const char *str, int *next) {
-    int len = strlen(str);
-    int j = 0, k = -1;
-    next[0] = -1;
-    while (j < len - 1) {
-        if (k == -1 || str[j] == str[k]) {
-            if (str[++j] == str[++k]) {
-                next[j] = next[k];
-            } else {
-                next[j] = k;
-            }
-        } else {
-            k = next[k];
-        }
-    }
-    return;
-}
