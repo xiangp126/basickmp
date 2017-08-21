@@ -2,7 +2,10 @@
     K.M.P Algorithm was very useful in sub string search context.
 
 ## Basic KMP 
+    You May Know Well about the Next Array From Below Two Figures.
+
 ![next1](http://img1.tuicool.com/2E36nuQ.png!web)
+
 ![next2](http://img1.tuicool.com/qYN3u2v.png!web)
 
 ## Optimized KMP 
@@ -29,4 +32,5 @@
 ## Reference 
 
 [Illustration of NEXT](http://www.tuicool.com/articles/yayeIbe)
+
 [Illustration of KMP](http://www.cnblogs.com/yjiyjige/p/3263858.html)
