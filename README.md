@@ -11,11 +11,12 @@
 ## Usage
 
 ```bash    
-    > make && ./demo
-    virl@virl:kmp_algorithm_implementation$ make && ./demo
+    > make
     g++ -Wall -g3 -std=c++11 -c kmp.cpp -o kmp.o
     g++ -Wall -g3 -std=c++11 -c demo.cpp -o demo.o
     g++ kmp.o demo.o -o demo
+
+    > ./demo 
     Original Pattern: BCDABDE
     Original String:  BBCABCDABABCDABCDABDET
     Next Array:  -1  0  0  0  0  1  0
