@@ -31,5 +31,3 @@
 ## Reference 
 
 [Illustration of NEXT](http://www.tuicool.com/articles/yayeIbe)
-
-[Illustration of KMP](http://www.cnblogs.com/yjiyjige/p/3263858.html)
